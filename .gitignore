@@ -1,0 +1,54 @@
+# Dependências
+node_modules/
+package-lock.json
+yarn.lock
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos temporários
+.temp/
+tmp/
+temp/
+
+# Arquivos de build
+dist/
+build/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.eslintcache
+
+# Arquivos de teste
+coverage/
+.nyc_output/
+
+# Arquivos de backup
+*.bak
+*.backup
+*.orig
+
+# Arquivos de configuração local
+local.conf
+config.local.js

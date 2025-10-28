@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard Interativo - Impacto do Preço dos Combustíveis no IPCA. Projeto Integrador UNIVESP.">
+    <meta name="keywords" content="IPCA, Combustíveis, Gasolina, Inflação, Dashboard, Brasil">
+    <meta name="author" content="Projeto Integrador UNIVESP">
+    
+    <title>Dashboard IPCA & Combustíveis - Projeto Integrador UNIVESP</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-chart-line"></i> Dashboard IPCA & Combustíveis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm ms-2" id="themeToggle" title="Alternar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 text-white text-center" id="heroSection">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Impacto dos Combustíveis no IPCA</h1>
+            <p class="lead mb-4">Explore a relação entre os preços dos combustíveis e a inflação brasileira através de dados históricos e projeções futuras.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-3 text-center mb-3">
+                    <div class="stat-card">
+                        <h5 id="totalDataPoints">126</h5>
+                        <p>Meses de Dados</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <div class="stat-card">
+                        <h5 id="avgGasolina">R$ 4.50</h5>
+                        <p>Preço Médio Gasolina</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <div class="stat-card">
+                        <h5 id="totalIPCA">45.2%</h5>
+                        <p>IPCA Acumulado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section py-4" id="filtersSection">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="yearFilter" class="form-label fw-bold">Filtrar por Ano</label>
+                    <select class="form-select" id="yearFilter">
+                        <option value="">Todos os Anos</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="monthFilter" class="form-label fw-bold">Filtrar por Mês</label>
+                    <select class="form-select" id="monthFilter">
+                        <option value="">Todos os Meses</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="dataTypeFilter" class="form-label fw-bold">Tipo de Dados</label>
+                    <select class="form-select" id="dataTypeFilter">
+                        <option value="all">Histórico + Projeção</option>
+                        <option value="historical">Apenas Histórico</option>
+                        <option value="projection">Apenas Projeção</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-bold">&nbsp;</label>
+                    <button class="btn btn-primary w-100" id="resetFilters">
+                        <i class="fas fa-redo"></i> Resetar Filtros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gráficos Principais -->
+    <section class="charts-section py-5" id="chartsSection">
+        <div class="container-fluid">
+            <div class="row g-4">
+                <!-- Gráfico 1: Evolução do Preço da Gasolina -->
+                <div class="col-lg-6">
+                    <div class="card chart-card">
+                        <div class="card-header bg-gradient-brazil">
+                            <h5 class="mb-0 text-white">
+                                <i class="fas fa-gas-pump"></i> Evolução do Preço da Gasolina
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="gasChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico 2: Evolução do IPCA Mensal -->
+                <div class="col-lg-6">
+                    <div class="card chart-card">
+                        <div class="card-header bg-gradient-brazil">
+                            <h5 class="mb-0 text-white">
+                                <i class="fas fa-chart-bar"></i> IPCA Mensal
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="ipcaMesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico 3: IPCA Acumulado -->
+                <div class="col-lg-6">
+                    <div class="card chart-card">
+                        <div class="card-header bg-gradient-brazil">
+                            <h5 class="mb-0 text-white">
+                                <i class="fas fa-chart-line"></i> IPCA Acumulado
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="ipcaAcumChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfico 4: Correlação Gasolina vs IPCA -->
+                <div class="col-lg-6">
+                    <div class="card chart-card">
+                        <div class="card-header bg-gradient-brazil">
+                            <h5 class="mb-0 text-white">
+                                <i class="fas fa-link"></i> Correlação: Gasolina vs IPCA
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="correlationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabela de Dados -->
+    <section class="table-section py-5" id="tableSection">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header bg-gradient-brazil">
+                    <h5 class="mb-0 text-white">
+                        <i class="fas fa-table"></i> Dados Detalhados
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped" id="dataTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Preço Gasolina (R$)</th>
+                                    <th>IPCA Mensal (%)</th>
+                                    <th>IPCA Acumulado (%)</th>
+                                    <th>Variação Gasolina (%)</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 mt-5" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-2">Sobre o Projeto</h6>
+                    <p class="small">Dashboard desenvolvido como parte do Projeto Integrador IV da UNIVESP, apresentando a análise do impacto dos combustíveis no IPCA.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-2">Fontes de Dados</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://www.gov.br/anp/pt-br" target="_blank" class="text-decoration-none">ANP - Agência Nacional do Petróleo</a></li>
+                        <li><a href="https://www.ibge.gov.br/" target="_blank" class="text-decoration-none">IBGE - Instituto Brasileiro de Geografia e Estatística</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-2">Navegação</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-decoration-none">Dashboard</a></li>
+                        <li><a href="sobre.html" class="text-decoration-none">Sobre Nós</a></li>
+                        <li><a href="contato.html" class="text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center small">
+                <p>&copy; 2025 Projeto Integrador UNIVESP. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart text-danger"></i> para a comunidade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Scripts Customizados -->
+    <script src="js/theme.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

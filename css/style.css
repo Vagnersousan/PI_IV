@@ -1,0 +1,639 @@
+/* ============================================
+   VARIÁVEIS CSS - TEMA CLARO (PADRÃO)
+   ============================================ */
+:root {
+    /* Cores do Brasil */
+    --color-green: #009c3b;
+    --color-yellow: #ffcd00;
+    --color-blue: #002776;
+    --color-white: #ffffff;
+    --color-dark: #1a1a1a;
+    
+    /* Cores Secundárias */
+    --color-primary: #0078d4;
+    --color-success: #107c10;
+    --color-warning: #ffc107;
+    --color-danger: #d13438;
+    --color-info: #0078d4;
+    
+    /* Cores de Fundo */
+    --bg-primary: #f3f3f3;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    
+    /* Cores de Texto */
+    --text-primary: #1a1a1a;
+    --text-secondary: #595959;
+    --text-tertiary: #8a8a8a;
+    
+    /* Cores de Borda */
+    --border-color: #d0d0d0;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+    
+    /* Transições */
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
+   VARIÁVEIS CSS - TEMA ESCURO
+   ============================================ */
+body.dark-theme {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #252525;
+    --bg-tertiary: #3a3a3a;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #b0b0b0;
+    
+    --border-color: #404040;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   RESET E ESTILOS GLOBAIS
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: var(--transition);
+    line-height: 1.6;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+#navbar {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-green) 100%) !important;
+    box-shadow: var(--shadow-md);
+}
+
+#navbar .navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+#navbar .nav-link {
+    transition: var(--transition);
+    margin-left: 0.5rem;
+}
+
+#navbar .nav-link:hover {
+    color: var(--color-yellow) !important;
+    transform: translateY(-2px);
+}
+
+#navbar .nav-link.active {
+    color: var(--color-yellow) !important;
+    border-bottom: 2px solid var(--color-yellow);
+}
+
+#themeToggle {
+    transition: var(--transition);
+}
+
+#themeToggle:hover {
+    transform: rotate(20deg);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-green) 50%, var(--color-yellow) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideInDown 0.8s ease;
+}
+
+.hero-section p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: slideInUp 0.8s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   STAT CARDS
+   ============================================ */
+.stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* ============================================
+   FILTROS
+   ============================================ */
+#filtersSection {
+    background-color: var(--bg-secondary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.form-label {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-select,
+.form-control {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.form-select:focus,
+.form-control:focus {
+    background-color: var(--bg-tertiary);
+    border-color: var(--color-primary);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 120, 212, 0.25);
+}
+
+.form-select option {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   GRÁFICOS
+   ============================================ */
+#chartsSection {
+    background-color: var(--bg-primary);
+}
+
+.chart-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.chart-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+.chart-card .card-header {
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.chart-card .card-body {
+    padding: 1.5rem;
+    position: relative;
+    min-height: 350px;
+}
+
+.bg-gradient-brazil {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-green) 100%) !important;
+}
+
+/* ============================================
+   TABELA
+   ============================================ */
+#tableSection {
+    background-color: var(--bg-primary);
+}
+
+.table {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.table-dark {
+    background-color: var(--color-blue);
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--bg-tertiary);
+}
+
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-green) 100%);
+    color: white;
+    margin-top: auto;
+}
+
+.footer a {
+    color: var(--color-yellow);
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   CARDS GERAIS
+   ============================================ */
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+.card-title {
+    color: var(--text-primary);
+}
+
+.card-text {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: #0066b8;
+    border-color: #0066b8;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* ============================================
+   ALERTAS
+   ============================================ */
+.alert {
+    border-radius: 8px;
+    border: none;
+    transition: var(--transition);
+}
+
+.alert-success {
+    background-color: rgba(16, 124, 16, 0.1);
+    color: var(--color-success);
+    border-left: 4px solid var(--color-success);
+}
+
+.alert-danger {
+    background-color: rgba(209, 52, 56, 0.1);
+    color: var(--color-danger);
+    border-left: 4px solid var(--color-danger);
+}
+
+.alert-info {
+    background-color: rgba(0, 120, 212, 0.1);
+    color: var(--color-info);
+    border-left: 4px solid var(--color-info);
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #856404;
+    border-left: 4px solid var(--color-warning);
+}
+
+/* ============================================
+   FORMULÁRIOS
+   ============================================ */
+.form-check-input {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 120, 212, 0.25);
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-card h5 {
+        font-size: 1.5rem;
+    }
+
+    .chart-card .card-body {
+        min-height: 300px;
+    }
+
+    #filtersSection .row {
+        flex-direction: column;
+    }
+
+    #filtersSection .col-md-3 {
+        margin-bottom: 1rem;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .stat-card h5 {
+        font-size: 1.2rem;
+    }
+
+    .stat-card p {
+        font-size: 0.85rem;
+    }
+
+    .chart-card .card-body {
+        min-height: 250px;
+    }
+
+    .table {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .container-fluid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* ============================================
+   ACESSIBILIDADE
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus visível para navegação por teclado */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   SCROLLBAR CUSTOMIZADA
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-blue);
+}
+
+/* ============================================
+   ANIMAÇÕES ADICIONAIS
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease;
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+.spinner-border {
+    color: var(--color-primary);
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.2em;
+}
+
+/* ============================================
+   TOOLTIP E POPOVER
+   ============================================ */
+.tooltip-inner {
+    background-color: var(--text-primary);
+    color: var(--bg-secondary);
+}
+
+.popover {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.popover-header {
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ============================================
+   IMPRESSÃO
+   ============================================ */
+@media print {
+    #navbar,
+    .footer,
+    #filtersSection {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .card,
+    .chart-card {
+        page-break-inside: avoid;
+    }
+}

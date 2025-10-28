@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre o Projeto - Dashboard Interativo de IPCA e Combustíveis. Projeto Integrador UNIVESP.">
+    
+    <title>Sobre Nós - Dashboard IPCA & Combustíveis</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-chart-line"></i> Dashboard IPCA & Combustíveis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sobre.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm ms-2" id="themeToggle" title="Alternar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 text-white text-center" id="heroSection">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Sobre Este Projeto</h1>
+            <p class="lead">Conheça a história, os objetivos e a equipe por trás do Dashboard de IPCA e Combustíveis.</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Seção 1: O Projeto -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-project-diagram text-primary"></i> O Projeto
+                    </h2>
+                    <p class="fs-5 mb-3">
+                        Este dashboard foi desenvolvido como parte do <strong>Projeto Integrador IV</strong> da <strong>Universidade Virtual do Estado de São Paulo (UNIVESP)</strong>, 
+                        atendendo aos requisitos dos cursos de <strong>Bacharelado em Ciência de Dados</strong> e <strong>Engenharia de Computação</strong>.
+                    </p>
+                    <p class="fs-5 mb-3">
+                        O objetivo principal é <strong>analisar e visualizar o impacto das variações nos preços dos combustíveis sobre o Índice Nacional de Preços ao Consumidor Amplo (IPCA)</strong>, 
+                        utilizando técnicas de <strong>Machine Learning</strong> e apresentando os resultados de forma interativa e acessível ao público em geral.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Seção 2: Motivação e Relevância -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-lightbulb text-warning"></i> Motivação e Relevância
+                    </h2>
+                    <p class="fs-5 mb-3">
+                        Embora o termo "IPCA" e "inflação" sejam amplamente reconhecidos pela mídia, existe uma <strong>lacuna significativa no entendimento da população</strong> 
+                        sobre como esse indicador afeta diretamente o cotidiano das pessoas. Muitos percebem a redução do poder de compra ao longo do tempo, 
+                        mas não conseguem relacionar essa percepção às variações de preços de produtos específicos.
+                    </p>
+                    <p class="fs-5 mb-3">
+                        Os <strong>combustíveis</strong>, especialmente a gasolina, têm um efeito multiplicador na economia: impactam o custo do transporte de mercadorias, 
+                        o frete, o preço dos alimentos e até serviços como delivery e transporte por aplicativo. Tornar essa relação visível, mensurável e interativa 
+                        é um passo fundamental para <strong>empoderar o cidadão com conhecimento</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Seção 3: Metodologia -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-cogs text-success"></i> Metodologia
+                    </h2>
+                    <p class="fs-5 mb-3">
+                        O projeto segue uma metodologia rigorosa de Ciência de Dados:
+                    </p>
+                    <ul class="fs-5 mb-3">
+                        <li><strong>Coleta de Dados:</strong> Dados históricos de preços de combustíveis da ANP (Agência Nacional do Petróleo, Gás Natural e Biocombustíveis) 
+                            e série temporal do IPCA do IBGE (Instituto Brasileiro de Geografia e Estatística).</li>
+                        <li><strong>Pré-processamento:</strong> Limpeza, tratamento e integração dos dados para garantir consistência temporal e geográfica.</li>
+                        <li><strong>Modelagem:</strong> Aplicação de técnicas de Machine Learning, incluindo <strong>Ridge Regression</strong>, para quantificar o impacto das flutuações 
+                            no preço da gasolina sobre a variação mensal do IPCA.</li>
+                        <li><strong>Visualização:</strong> Desenvolvimento de um dashboard interativo em HTML, CSS e JavaScript, permitindo exploração visual dos dados e compreensão intuitiva 
+                            da relação entre combustíveis e inflação.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Seção 4: Tecnologias Utilizadas -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-code text-info"></i> Tecnologias Utilizadas
+                    </h2>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fab fa-html5 text-danger"></i> Frontend</h5>
+                                    <ul class="list-unstyled">
+                                        <li><strong>HTML5:</strong> Estrutura semântica</li>
+                                        <li><strong>CSS3:</strong> Estilização e responsividade</li>
+                                        <li><strong>JavaScript (ES6+):</strong> Interatividade</li>
+                                        <li><strong>Bootstrap 5.3:</strong> Framework CSS</li>
+                                        <li><strong>Chart.js:</strong> Gráficos interativos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fab fa-python text-primary"></i> Processamento de Dados</h5>
+                                    <ul class="list-unstyled">
+                                        <li><strong>Python 3.11:</strong> Linguagem principal</li>
+                                        <li><strong>Pandas:</strong> Manipulação de dados</li>
+                                        <li><strong>Scikit-learn:</strong> Machine Learning</li>
+                                        <li><strong>NumPy:</strong> Cálculos numéricos</li>
+                                        <li><strong>Jupyter Notebook:</strong> Análise exploratória</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção 5: A Equipe -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-users text-primary"></i> A Equipe
+                    </h2>
+                    <p class="fs-5 mb-4">
+                        Este projeto foi desenvolvido por um grupo dedicado de estudantes da UNIVESP, combinando conhecimentos em Ciência de Dados, Engenharia de Computação e Análise Econômica:
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-user-circle"></i> Anderson Rodrigues</h5>
+                                    <p class="card-text small text-muted">RA: 2209994</p>
+                                    <p class="card-text">Especialista em análise de dados e modelagem preditiva.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-user-circle"></i> Daniel Tobias Miguel</h5>
+                                    <p class="card-text small text-muted">RA: 2205038</p>
+                                    <p class="card-text">Desenvolvedor e especialista em integração de sistemas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-user-circle"></i> Lucas Melo de Chiara</h5>
+                                    <p class="card-text small text-muted">RA: 23213289</p>
+                                    <p class="card-text">Especialista em Machine Learning e análise de séries temporais.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-user-circle"></i> Marina Maria Santana</h5>
+                                    <p class="card-text small text-muted">RA: 2205539</p>
+                                    <p class="card-text">Analista de dados e especialista em visualização.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-user-circle"></i> Ricardo de Jesus Santos</h5>
+                                    <p class="card-text small text-muted">RA: 2214073</p>
+                                    <p class="card-text">Especialista em processamento de dados e ETL.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-user-circle"></i> Vagner Sousa dos Santos</h5>
+                                    <p class="card-text small text-muted">RA: 2203394</p>
+                                    <p class="card-text">Desenvolvedor frontend e especialista em UX/UI.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção 6: Fontes de Dados -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-database text-secondary"></i> Fontes de Dados
+                    </h2>
+                    <p class="fs-5 mb-3">
+                        Os dados utilizados neste projeto são públicos e de fontes confiáveis:
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-gas-pump text-warning"></i> ANP</h5>
+                                    <p class="card-text">Série histórica de preços de combustíveis (2015-2024)</p>
+                                    <a href="https://www.gov.br/anp/pt-br" target="_blank" class="btn btn-sm btn-outline-primary">Acessar ANP</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-chart-bar text-info"></i> IBGE</h5>
+                                    <p class="card-text">Índice Nacional de Preços ao Consumidor Amplo (IPCA)</p>
+                                    <a href="https://www.ibge.gov.br/" target="_blank" class="btn btn-sm btn-outline-primary">Acessar IBGE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção 7: Conclusão -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold mb-4">
+                        <i class="fas fa-star text-success"></i> Impacto e Contribuição
+                    </h2>
+                    <p class="fs-5 mb-3">
+                        Este projeto não é apenas um artefato técnico, mas uma <strong>ferramenta de educação financeira</strong> que pode ser utilizada por:
+                    </p>
+                    <ul class="fs-5 mb-3">
+                        <li><strong>Professores e Educadores:</strong> Para ensinar sobre inflação e economia de forma visual e interativa.</li>
+                        <li><strong>Jornalistas e Comunicadores:</strong> Para comunicar dados complexos de forma acessível ao público.</li>
+                        <li><strong>Gestores Públicos:</strong> Para entender o peso relativo dos combustíveis no IPCA.</li>
+                        <li><strong>Cidadãos Comuns:</strong> Para compreender como as flutuações nos preços dos combustíveis afetam seu poder de compra.</li>
+                    </ul>
+                    <p class="fs-5">
+                        Esperamos que este dashboard contribua para a <strong>democratização do conhecimento econômico</strong> e inspire futuros projetos de visualização de dados públicos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 mt-5" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-2">Sobre o Projeto</h6>
+                    <p class="small">Dashboard desenvolvido como parte do Projeto Integrador IV da UNIVESP, apresentando a análise do impacto dos combustíveis no IPCA.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-2">Fontes de Dados</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://www.gov.br/anp/pt-br" target="_blank" class="text-decoration-none">ANP - Agência Nacional do Petróleo</a></li>
+                        <li><a href="https://www.ibge.gov.br/" target="_blank" class="text-decoration-none">IBGE - Instituto Brasileiro de Geografia e Estatística</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-2">Navegação</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-decoration-none">Dashboard</a></li>
+                        <li><a href="sobre.html" class="text-decoration-none">Sobre Nós</a></li>
+                        <li><a href="contato.html" class="text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center small">
+                <p>&copy; 2025 Projeto Integrador UNIVESP. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart text-danger"></i> para a comunidade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts Customizados -->
+    <script src="js/theme.js"></script>
+</body>
+</html>

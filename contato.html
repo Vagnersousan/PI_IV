@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contato - Dashboard Interativo de IPCA e Combustíveis. Projeto Integrador UNIVESP.">
+    
+    <title>Contato - Dashboard IPCA & Combustíveis</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-chart-line"></i> Dashboard IPCA & Combustíveis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm ms-2" id="themeToggle" title="Alternar tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 text-white text-center" id="heroSection">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Entre em Contato Conosco</h1>
+            <p class="lead">Tem dúvidas, sugestões ou quer saber mais sobre o projeto? Envie-nos uma mensagem!</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Informações de Contato -->
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">
+                                <i class="fas fa-info-circle text-primary"></i> Informações
+                            </h5>
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="fas fa-university text-info"></i> Instituição
+                                </h6>
+                                <p class="text-muted">Universidade Virtual do Estado de São Paulo (UNIVESP)</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="fas fa-book text-success"></i> Disciplina
+                                </h6>
+                                <p class="text-muted">Projeto Integrador IV</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="fas fa-graduation-cap text-warning"></i> Cursos
+                                </h6>
+                                <p class="text-muted">Bacharelado em Ciência de Dados e Engenharia de Computação</p>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-2">
+                                    <i class="fas fa-globe text-danger"></i> Web
+                                </h6>
+                                <p class="text-muted">
+                                    <a href="https://www.univesp.br/" target="_blank" class="text-decoration-none">www.univesp.br</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contato -->
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header bg-gradient-brazil">
+                            <h5 class="mb-0 text-white">
+                                <i class="fas fa-envelope"></i> Formulário de Contato
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm" method="POST" action="https://formspree.io/f/xyzabc" novalidate>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label fw-bold">Nome Completo *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required placeholder="Seu nome">
+                                    <div class="invalid-feedback">
+                                        Por favor, insira seu nome.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fw-bold">Email *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                                    <div class="invalid-feedback">
+                                        Por favor, insira um email válido.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label fw-bold">Telefone (Opcional)</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="(11) 99999-9999">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label fw-bold">Assunto *</label>
+                                    <select class="form-select" id="subject" name="subject" required>
+                                        <option value="">Selecione um assunto</option>
+                                        <option value="duvida">Dúvida sobre o projeto</option>
+                                        <option value="sugestao">Sugestão de melhoria</option>
+                                        <option value="feedback">Feedback positivo</option>
+                                        <option value="erro">Reportar erro</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor, selecione um assunto.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message" class="form-label fw-bold">Mensagem *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                                    <div class="invalid-feedback">
+                                        Por favor, insira uma mensagem.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required>
+                                    <label class="form-check-label" for="privacy">
+                                        Concordo com a política de privacidade e autorizo o contato *
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Você deve concordar com a política de privacidade.
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                                </button>
+                            </form>
+                            <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+                                <i class="fas fa-check-circle"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
+                            </div>
+                            <div id="errorMessage" class="alert alert-danger mt-3" style="display: none;">
+                                <i class="fas fa-exclamation-circle"></i> Ocorreu um erro ao enviar a mensagem. Tente novamente.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informações Adicionais -->
+                    <div class="alert alert-info mt-4" role="alert">
+                        <h5 class="alert-heading">
+                            <i class="fas fa-lightbulb"></i> Dica
+                        </h5>
+                        <p class="mb-0">
+                            Este formulário utiliza <strong>Formspree</strong> para processar os dados de contato de forma segura. 
+                            Suas informações não serão compartilhadas com terceiros e serão utilizadas apenas para responder sua mensagem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 mt-5" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-2">Sobre o Projeto</h6>
+                    <p class="small">Dashboard desenvolvido como parte do Projeto Integrador IV da UNIVESP, apresentando a análise do impacto dos combustíveis no IPCA.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-2">Fontes de Dados</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://www.gov.br/anp/pt-br" target="_blank" class="text-decoration-none">ANP - Agência Nacional do Petróleo</a></li>
+                        <li><a href="https://www.ibge.gov.br/" target="_blank" class="text-decoration-none">IBGE - Instituto Brasileiro de Geografia e Estatística</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-2">Navegação</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-decoration-none">Dashboard</a></li>
+                        <li><a href="sobre.html" class="text-decoration-none">Sobre Nós</a></li>
+                        <li><a href="contato.html" class="text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center small">
+                <p>&copy; 2025 Projeto Integrador UNIVESP. Todos os direitos reservados. | Desenvolvido com <i class="fas fa-heart text-danger"></i> para a comunidade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts Customizados -->
+    <script src="js/theme.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
