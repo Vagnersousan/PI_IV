@@ -93,7 +93,7 @@ function createGasChart() {
                 x: {
                     ticks: {
                         color: getComputedStyle(document.body).color,
-                        maxTicksLimit: 10
+                        maxTicksLimit: 999
                     },
                     grid: {
                         display: false
@@ -173,7 +173,7 @@ function createIPCAMesChart() {
                 x: {
                     ticks: {
                         color: getComputedStyle(document.body).color,
-                        maxTicksLimit: 10
+                        maxTicksLimit: 999
                     },
                     grid: {
                         display: false
@@ -258,7 +258,7 @@ function createIPCAAccumChart() {
                 x: {
                     ticks: {
                         color: getComputedStyle(document.body).color,
-                        maxTicksLimit: 10
+                        maxTicksLimit: 999
                     },
                     grid: {
                         display: false
@@ -382,7 +382,7 @@ function createCorrelationChart() {
                 x: {
                     ticks: {
                         color: getComputedStyle(document.body).color,
-                        maxTicksLimit: 10
+                        maxTicksLimit: 999
                     },
                     grid: {
                         display: false

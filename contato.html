@@ -7,17 +7,13 @@
     
     <title>Contato - Dashboard IPCA & Combustíveis</title>
     
-    <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome para ícones -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <!-- CSS Customizado -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="index.html">
@@ -37,17 +33,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="contato.html">Contato</a>
                     </li>
-                    <li class="nav-item">
-                        <button class="btn btn-outline-light btn-sm ms-2" id="themeToggle" title="Alternar tema">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section py-5 text-white text-center" id="heroSection">
         <div class="container">
             <h1 class="display-4 fw-bold mb-3">Entre em Contato Conosco</h1>
@@ -55,13 +45,11 @@
         </div>
     </section>
 
-    <!-- Conteúdo Principal -->
     <section class="py-5">
         <div class="container">
             <div class="row g-4">
-                <!-- Informações de Contato -->
-                <div class="col-lg-4">
-                    <div class="card h-100">
+                <div class="col-lg-4 contact-info">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title mb-4">
                                 <i class="fas fa-info-circle text-primary"></i> Informações
@@ -70,25 +58,25 @@
                                 <h6 class="fw-bold mb-2">
                                     <i class="fas fa-university text-info"></i> Instituição
                                 </h6>
-                                <p class="text-muted">Universidade Virtual do Estado de São Paulo (UNIVESP)</p>
+                                <p class="text">Universidade Virtual do Estado de São Paulo (UNIVESP)</p>
                             </div>
                             <div class="mb-4">
                                 <h6 class="fw-bold mb-2">
                                     <i class="fas fa-book text-success"></i> Disciplina
                                 </h6>
-                                <p class="text-muted">Projeto Integrador IV</p>
+                                <p class="text">Projeto Integrador IV</p>
                             </div>
                             <div class="mb-4">
                                 <h6 class="fw-bold mb-2">
                                     <i class="fas fa-graduation-cap text-warning"></i> Cursos
                                 </h6>
-                                <p class="text-muted">Bacharelado em Ciência de Dados e Engenharia de Computação</p>
+                                <p class="text">Bacharelado em Ciência de Dados e Engenharia de Computação</p>
                             </div>
                             <div>
                                 <h6 class="fw-bold mb-2">
                                     <i class="fas fa-globe text-danger"></i> Web
                                 </h6>
-                                <p class="text-muted">
+                                <p class="text">
                                     <a href="https://www.univesp.br/" target="_blank" class="text-decoration-none">www.univesp.br</a>
                                 </p>
                             </div>
@@ -96,7 +84,6 @@
                     </div>
                 </div>
 
-                <!-- Formulário de Contato -->
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-header bg-gradient-brazil">
@@ -105,7 +92,7 @@
                             </h5>
                         </div>
                         <div class="card-body">
-                            <form id="contactForm" method="POST" action="https://formspree.io/f/xyzabc" novalidate>
+                            <form id="contactForm" method="POST" action="https://formspree.io/f/mdkpgwnq">
                                 <div class="mb-3">
                                     <label for="name" class="form-label fw-bold">Nome Completo *</label>
                                     <input type="text" class="form-control" id="name" name="name" required placeholder="Seu nome">
@@ -173,10 +160,9 @@
                         </div>
                     </div>
 
-                    <!-- Informações Adicionais -->
                     <div class="alert alert-info mt-4" role="alert">
                         <h5 class="alert-heading">
-                            <i class="fas fa-lightbulb"></i> Dica
+                            <i class="fas fa-lightbulb"></i> Aviso de Privacidade :
                         </h5>
                         <p class="mb-0">
                             Este formulário utiliza <strong>Formspree</strong> para processar os dados de contato de forma segura. 
@@ -188,7 +174,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer py-4 mt-5" id="footer">
         <div class="container">
             <div class="row">
@@ -219,10 +204,8 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Scripts Customizados -->
     <script src="js/theme.js"></script>
     <script src="js/contact.js"></script>
 </body>

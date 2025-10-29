@@ -1,5 +1,5 @@
 /* ============================================
-   VARIÁVEIS CSS - TEMA CLARO (PADRÃO)
+   VARIÁVEIS CSS
    ============================================ */
 :root {
     /* Cores do Brasil */
@@ -38,24 +38,6 @@
     --transition: all 0.3s ease;
 }
 
-/* ============================================
-   VARIÁVEIS CSS - TEMA ESCURO
-   ============================================ */
-body.dark-theme {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #252525;
-    --bg-tertiary: #3a3a3a;
-    
-    --text-primary: #ffffff;
-    --text-secondary: #e0e0e0;
-    --text-tertiary: #b0b0b0;
-    
-    --border-color: #404040;
-    
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
 
 /* ============================================
    RESET E ESTILOS GLOBAIS
@@ -446,6 +428,10 @@ body {
 
     .stat-card h5 {
         font-size: 1.5rem;
+    }
+
+    .stat-card p {
+        font-size: 0.95rem;
     }
 
     .chart-card .card-body {

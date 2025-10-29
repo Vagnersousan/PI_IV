@@ -109,7 +109,7 @@ function updateStatistics() {
  */
 function populateFilters() {
     const yearFilter = document.getElementById('yearFilter');
-    const years = [...new Set(allData.map(d => d.ANO))].sort((a, b) => a - b);
+    const years = [...new Set(allData.map(d => d.DATA.getFullYear()))].sort((a, b) => a - b);
     
     years.forEach(year => {
         const option = document.createElement('option');
@@ -120,26 +120,29 @@ function populateFilters() {
 }
 
 /**
- * Filtra os dados com base nos critérios selecionados
- * @param {number} year - Ano selecionado (0 para todos)
+ * Filtra os dados com base nos critérios selecionado * @param {number} year - Ano selecionado (0 para todos)
  * @param {number} month - Mês selecionado (0 para todos)
  * @param {string} dataType - Tipo de dados ('all', 'historical', 'projection')
  */
-function filterData(year = 0, month = 0, dataType = 'all') {
-    filteredData = allData.filter(d => {
-        // Filtrar por ano
-        if (year && d.ANO !== year) return false;
+function filterData(year = 0, month = 0, dataType = 'all') {    filteredData = allData.filter(d => {
+// Filtrar por ano
+if (year && d.DATA.getFullYear() !== year) return false;
         
-        // Filtrar por mês
-        if (month && d.MES !== month) return false;
+        // Lógica de filtragem por mês:
+// Se um mês específico foi selecionado, filtra por ele.
+if (month > 0 && (d.DATA.getMonth() + 1) !== month) return false;
+
+// Se o ano está selecionado e o mês é "Todos os Meses" (month === 0),
+// não aplicamos filtro de mês, pois queremos todos os meses daquele ano.
+// A lógica acima já garante que isso aconteça. Vou adicionar um comentário para clareza.
         
-        // Filtrar por tipo de dados
-        // Dados históricos: até dezembro de 2024
-        // Dados de projeção: a partir de janeiro de 2025
+        // Filtrar por tipo de dadosde dados
+        // Dados históricos: até outubro de 2025
+        // Dados de projeção: a partir de novembro de 2025 (MES >= 11)
         if (dataType === 'historical') {
-            return d.ANO < 2025 || (d.ANO === 2024 && d.MES <= 12);
+            return d.ANO < 2025 || (d.ANO === 2025 && d.MES < 11);
         } else if (dataType === 'projection') {
-            return d.ANO >= 2025;
+            return d.ANO > 2025 || (d.ANO === 2025 && d.MES >= 11);
         }
         
         return true;
@@ -168,8 +171,7 @@ function getAllData() {
  * Reseta os filtros
  */
 function resetFilters() {
-    document.getElementById('yearFilter').value = '';
-    document.getElementById('monthFilter').value = '';
+
     document.getElementById('dataTypeFilter').value = 'all';
     
     filteredData = [...allData];

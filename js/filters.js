@@ -8,12 +8,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     const yearFilter = document.getElementById('yearFilter');
     const monthFilter = document.getElementById('monthFilter');
+
     const dataTypeFilter = document.getElementById('dataTypeFilter');
     const resetButton = document.getElementById('resetFilters');
     
     // Adicionar eventos aos filtros
     yearFilter.addEventListener('change', applyFilters);
     monthFilter.addEventListener('change', applyFilters);
+
     dataTypeFilter.addEventListener('change', applyFilters);
     resetButton.addEventListener('click', handleResetFilters);
 });
@@ -23,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function applyFilters() {
     const year = parseInt(document.getElementById('yearFilter').value) || 0;
-    const month = parseInt(document.getElementById('monthFilter').value) || 0;
+    const monthValue = document.getElementById('monthFilter').value;
+    const month = monthValue === '' ? 0 : parseInt(monthValue);
     const dataType = document.getElementById('dataTypeFilter').value || 'all';
     
     // Filtrar os dados
@@ -43,6 +46,7 @@ function handleResetFilters() {
     
     // Resetar os valores dos inputs
     document.getElementById('yearFilter').value = '';
+
     document.getElementById('monthFilter').value = '';
     document.getElementById('dataTypeFilter').value = 'all';
     
@@ -68,7 +72,7 @@ function updateDataTable() {
         
         // Determinar o tipo de dado (histórico ou projeção)
         let dataType = 'Histórico';
-        if (row.ANO > 2024 || (row.ANO === 2024 && row.MES > 12)) {
+        if (row.ANO > 2025 || (row.ANO === 2025 && row.MES >= 11)) {
             dataType = 'Projeção';
         }
         
