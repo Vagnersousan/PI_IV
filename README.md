@@ -214,7 +214,7 @@ Este projeto é fornecido como material educacional. Todos os direitos reservado
 ## 📞 Contato
 
 Para dúvidas, sugestões ou feedback, utilize o formulário de contato disponível em:
-- **URL**: [seu-projeto.netlify.app/contato.html](https://seu-projeto.netlify.app/contato.html)
+- **URL**: [https://dashboardipcaecombustiveis.netlify.app/contato](https://dashboardipcaecombustiveis.netlify.app/contato)
 
 ## 🙏 Agradecimentos
 
