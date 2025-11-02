@@ -10,12 +10,12 @@ O objetivo principal é **analisar e visualizar o impacto das variações nos pr
 
 ## 👥 Equipe do Projeto
 
-- **Anderson Rodrigues** (RA: 2209994)
-- **Daniel Tobias Miguel** (RA: 2205038)
-- **Lucas Melo de Chiara** (RA: 23213289)
-- **Marina Maria Santana** (RA: 2205539)
-- **Ricardo de Jesus Santos** (RA: 2214073)
-- **Vagner Sousa dos Santos** (RA: 2203394)
+- **Anderson Rodrigues**
+- **Daniel Tobias Miguel**
+- **Lucas Melo de Chiara**
+- **Marina Maria Santana**
+- **Ricardo de Jesus Santos**
+- **Vagner Sousa dos Santos**
 
 ## 🎯 Objetivos
 
